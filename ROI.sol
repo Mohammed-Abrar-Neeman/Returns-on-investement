@@ -3,7 +3,7 @@ pragma solidity ^0.8.0;
 
 contract invest {
   
-    uint256 liquifyLimit = 2 ether;
+    uint256 liquifyLimit = 1 ether;
 
     address public owner;
 
@@ -36,7 +36,7 @@ contract invest {
             MemberAddresses.push(msg.sender); 
         }
         if (balance[address(this)] == liquifyLimit) {
-            uint256  regfee_prof = ( (balance[address(this)] * 69) / (1000));
+            uint256  regfee_prof = ( (balance[address(this)] * 67) / (1000));
             uint256 individual_prof = (regfee_prof / MemberAddresses.length);
             for(uint i=0;i<=MemberAddresses.length;i++){ 
                 //balance[address(this)] -=regfee_prof;
@@ -54,7 +54,7 @@ contract invest {
             invest_map[msg.sender].exp_time = block.timestamp + 30 days;
         }
         invest_map[msg.sender].invested_amount += msg.value;
-        invest_map[msg.sender].profit += ( (msg.value * 1 * 30 ) / (1000));
+        invest_map[msg.sender].profit += ( (msg.value * 171 * 30 ) / (10000));
     }
 
     function getBalance() public view returns (uint256) {
